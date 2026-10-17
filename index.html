@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Osteria Rustica | Home</title>
     <link rel="stylesheet" href="Style/main.css">
+    <link rel="stylesheet" href="https://googleapis.com">
 
     <script src="https://kit.fontawesome.com/846a9012f8.js" crossorigin="anonymous"></script>
 </head>
@@ -18,10 +19,10 @@
             <button id="about" class="nav-btn">About</button>
             <button id="menu" class="nav-btn">Menu</button>
             <button id="contact" class="nav-btn">Contact</button>
-            <a id="contact" href="#" class="nav-btn"><i class="fa fa-location-dot"></i> Visit us</a>
-            <a id="contact" href="#" class="nav-btn"><i class="fa fa-phone"></i> +123 45 678 910</a>
+            <a id="location" href="#" class="nav-btn"><i class="fa fa-location-dot"></i> Visit us</a>
+            <a id="whatsapp" href="#" class="nav-btn"><i class="fa fa-phone"></i> +123 45 678 910</a>
         </nav>
-        <button id="nav-open"><img src="/Media/Icons/x.svg" height="25px" alt="bars"><img class="active" src="/Media/Icons/bars.svg" height="25px" alt="x"></button>
+        <button id="nav-open"><img src="Media/Icons/x.svg" height="25px" alt="x"><img class="active" src="Media/Icons/bars.svg" height="25px" alt="bars"></button>
     </header>
     <main>
         <section id="home" class="page">
@@ -29,10 +30,50 @@
                 <h1>Where Time Honored Tradition Meets Modern Italian Artistry.</h1>
                 <p>Indulge in handcrafted pasta, wood-fired seasonal delicacies, and rare regional wines in an atmosphere of refined rustic warmth.</p>
                 <button id="reserve">Reservation</button>
+
+                <div id="reservation-modal" class="modal-window">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title"><i class="fa fa-utensils"></i> Reserve Your Table</h2>
+                            <button class="modal-close"><img src="Media/Icons/x-b.svg" height="25" alt="x"></button>
+                        </div>
+                        <form action="." method="POST" class="modal-form">
+                            <div class="form-content">
+                                <div class="form-input">
+                                    <label for="first">First Name</label>
+                                    <input type="text" name="first-name" id="first" placeholder="Type here...">
+                                </div>
+                                <div class="form-input">
+                                    <label for="last">Last Name</label>
+                                    <input type="text" name="last-name" id="last" placeholder="Type here...">
+                                </div>
+                                <div class="form-input">
+                                    <label for="tel">Phone</label>
+                                    <input type="tel" name="tel" id="tel" placeholder="+123 456 789">
+                                </div>
+                                <div class="form-input">
+                                    <label for="guests">Guests</label>
+                                    <input type="number" max="10" name="guests" id="guests" placeholder="Enter number... [1-10]">
+                                </div>
+                                <div class="form-input">
+                                    <label for="reserve-date">Date</label>
+                                    <input type="date" name="reserve-date" id="reserve-date">
+                                </div>
+                                <div class="form-input">
+                                    <label for="reserve-time">Time</label>
+                                    <input type="time" name="reserve-time" id="reserve-time">
+                                </div>
+                            </div>
+                            <button type="submit" id="submit-reservation">Submit Reservation</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        &copy; Copyright charbely.dev 2026, all rights reserved.
+    </footer>
     <script src="Script/index.js"></script>
 </body>
 </html>

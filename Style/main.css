@@ -4,12 +4,19 @@
     --color3: rgb(152, 126, 8);
 }
 
+@font-face {
+    font-family: 'Libre Franklin';
+    src: url("../Font/static/LibreFranklin-Regular.ttf");
+}
+
 * {
     margin: 0;
     padding: 0;
 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Libre Franklin', 'sans-serif';
 }
+
+/* HEADER STYLING STARTS HERE */
 
 header {
     position: fixed;
@@ -31,12 +38,22 @@ header nav {
     align-items: center;
     gap:1rem;
 }
-header nav button.nav-btn {
+header nav button.nav-btn,
+header nav a {
     background-color: transparent;
     border: none;
     color: white;
     padding: .5rem;
     font-size: 1rem;
+    text-decoration: none;
+}
+header nav a {
+    border: 1px solid var(--color1);
+    color: var(--color1);
+}
+header nav a:hover {
+    background-color: var(--color1);
+    color: white;
 }
 header nav .nav-btn:hover {
     cursor: pointer;
@@ -50,6 +67,8 @@ header button#nav-open {
     display: none;
 }
 
+/* HEADER STYLING ENDS HERE */
+
 main section.page {
     height: 100vh;
     display: flex;
@@ -58,6 +77,8 @@ main section.page {
     align-items: center;
     text-align: center;
 }
+
+/* HOME SECTION STYLING STARTS */
 
 main section#home {
     justify-content: space-evenly;
@@ -99,6 +120,145 @@ main section#home div.content button#reserve:hover{
     background-color: var(--color3);
     cursor: pointer;
 }
+/* - - - Modal box styling here - - - */
+
+main section#home div.modal-window {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+    height: 100%;
+    width:100%;
+    background-color: rgba(0,0,0,.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn .5s;
+}
+main section#home div.modal-window.active {
+    display: flex;
+}
+main section#home div.modal-window div.modal-content {
+    background-color: rgba(255,255,255);
+    height: fit-content;
+    width:70%;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+    animation: fadeDown .7s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeDown {
+    from {
+        transform: translateY(-25%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+main section#home div.modal-window div.modal-content div.modal-header {
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-block: .5rem;
+    border-bottom: 1px solid rgba(0,0,0,.3);
+    background-color: rgb(0,0,0,.08);
+
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+}
+main section#home div.modal-window div.modal-content div.modal-header h2.modal-title {
+    font-size: 1.4rem;
+    color: black;
+}
+main section#home div.modal-window div.modal-content div.modal-header h2.modal-title i {
+    color: var(--color1);
+}
+main section#home div.modal-window div.modal-content div.modal-header button.modal-close{
+    background-color: transparent;
+    border: none;
+}
+main section#home div.modal-window div.modal-content div.modal-header button.modal-close{
+    cursor: pointer;
+}
+
+main section#home div.modal-window div.modal-content form.modal-form {
+    padding: 1rem;
+    flex-grow: 1;
+    width:100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+main section#home div.modal-window div.modal-content form.modal-form div.form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    height: 100%;
+    width:100%;
+}
+main section#home div.modal-window div.modal-content form.modal-form div.form-content div.form-input {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main section#home div.modal-window div.modal-content form.modal-form label {
+    font-size: 1rem;
+    margin-inline-start: 2rem;
+}
+main section#home div.modal-window div.modal-content form.modal-form input {
+    padding:.5rem .7rem;
+    border: rgba(0,0,0,.3) solid 1px;
+    outline: none;
+    width:50%;
+    margin-inline-end: 2rem;
+}
+
+main section#home div.modal-window div.modal-content form.modal-form button#submit-reservation {
+    padding:.5rem 1.2rem;
+    border: none;
+    outline: none;
+    border-radius: .3rem;
+
+    background-color: transparent;
+    background-color: var(--color1);
+    font-weight: bold;
+    transition: .3s;
+}
+
+main section#home div.modal-window div.modal-content form.modal-form button#submit-reservation:hover {
+    cursor: pointer;
+    background-color: var(--color3);
+}
+/* - - - Modal box styling ends here - - - */
+
+
+/* HOME SECTION STYLING ENDS */
+
+/* - - - - - - */
+/* MEDIA QUERY */
+/* - - - - - - */
 
 @media (max-width: 750px) {
     header {
@@ -137,10 +297,12 @@ main section#home div.content button#reserve:hover{
     }
     header nav#nav-bar button,
     header nav#nav-bar a {
+        padding: 0;
         padding-block: 1rem;
         width:100%;
         text-align: center;
         border-bottom: 1px solid var(--color2);
+        border-inline: none;
     }
     header nav#nav-bar button:hover,
     header nav#nav-bar a:hover {
@@ -151,5 +313,8 @@ main section#home div.content button#reserve:hover{
 @media (max-width: 600px) {
     header nav#nav-bar {
         width:100%;
+    }
+    main section#home div.modal-window div.modal-content {
+        width: 90%;
     }
 }
