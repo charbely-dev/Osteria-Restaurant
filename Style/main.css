@@ -256,6 +256,24 @@ main section#home div.modal-window div.modal-content form.modal-form button#subm
 
 /* HOME SECTION STYLING ENDS */
 
+/* FOOTER STYLE */
+footer {
+    background-color: black;    
+    color: white;
+    padding:1rem;
+}
+footer span.author {
+    padding: 0 .1rem;
+    border-radius: .2rem;
+    color: var(--color1);
+
+}
+footer span.author::before {
+    content: "@";
+    color: var(--color3);
+}
+/* FOOTER STYLE END */
+
 /* - - - - - - */
 /* MEDIA QUERY */
 /* - - - - - - */
