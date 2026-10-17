@@ -62,7 +62,7 @@ main section.page {
 main section#home {
     justify-content: space-evenly;
 
-    background-image: url("/Media/Background/background-1.jpg");
+    background-image: url("../Media/Background/background-1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
