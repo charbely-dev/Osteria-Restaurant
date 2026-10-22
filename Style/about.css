@@ -1,5 +1,6 @@
 section#about {
     background-color: rgba(0,0,0);
+    color: white;
 }
 section#about::before {
     content: "";

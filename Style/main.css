@@ -126,10 +126,11 @@ main section#home div.content button#reserve:hover{
 /* - - - Modal box styling here - - - */
 
 main section#home div.modal-window {
-    position: absolute;
+    position: fixed;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
 
     height: 100%;
     width:100%;
@@ -281,7 +282,7 @@ footer span.author::before {
 /* MEDIA QUERY */
 /* - - - - - - */
 
-@media (max-width: 750px) {
+@media (max-width: 1000px) {
     header button#nav-open {
         display: inline;
     }
